@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0B06DE931E025B62009B556E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06DE921E025B62009B556E /* AppDelegate.swift */; };
-		0B06DE951E025B62009B556E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06DE941E025B62009B556E /* ViewController.swift */; };
 		0B06DE981E025B62009B556E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B06DE961E025B62009B556E /* Main.storyboard */; };
 		0B06DE9A1E025B62009B556E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B06DE991E025B62009B556E /* Assets.xcassets */; };
 		0B06DE9D1E025B62009B556E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B06DE9B1E025B62009B556E /* LaunchScreen.storyboard */; };
 		0B06DEA81E025B62009B556E /* LoginFormAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06DEA71E025B62009B556E /* LoginFormAnimationTests.swift */; };
 		0B06DEB31E025B62009B556E /* LoginFormAnimationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06DEB21E025B62009B556E /* LoginFormAnimationUITests.swift */; };
+		0B06DEC21E025C2C009B556E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06DEC11E025C2C009B556E /* LoginViewController.swift */; };
+		0B06DEC51E025FF3009B556E /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B06DEC41E025FF3009B556E /* FormTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,6 @@
 /* Begin PBXFileReference section */
 		0B06DE8F1E025B62009B556E /* LoginFormAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginFormAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06DE921E025B62009B556E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B06DE941E025B62009B556E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B06DE971E025B62009B556E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B06DE991E025B62009B556E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B06DE9C1E025B62009B556E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +47,8 @@
 		0B06DEAE1E025B62009B556E /* LoginFormAnimationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginFormAnimationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B06DEB21E025B62009B556E /* LoginFormAnimationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormAnimationUITests.swift; sourceTree = "<group>"; };
 		0B06DEB41E025B62009B556E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B06DEC11E025C2C009B556E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Controllers/LoginViewController.swift; sourceTree = "<group>"; };
+		0B06DEC41E025FF3009B556E /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormTextField.swift; path = CustomClasses/FormTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,9 @@
 		0B06DE911E025B62009B556E /* LoginFormAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				0B06DEC31E025FD6009B556E /* Custom Classes */,
+				0B06DEC01E025C13009B556E /* Controllers */,
 				0B06DE921E025B62009B556E /* AppDelegate.swift */,
-				0B06DE941E025B62009B556E /* ViewController.swift */,
 				0B06DE961E025B62009B556E /* Main.storyboard */,
 				0B06DE991E025B62009B556E /* Assets.xcassets */,
 				0B06DE9B1E025B62009B556E /* LaunchScreen.storyboard */,
@@ -123,6 +126,22 @@
 				0B06DEB41E025B62009B556E /* Info.plist */,
 			);
 			path = LoginFormAnimationUITests;
+			sourceTree = "<group>";
+		};
+		0B06DEC01E025C13009B556E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0B06DEC11E025C2C009B556E /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0B06DEC31E025FD6009B556E /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0B06DEC41E025FF3009B556E /* FormTextField.swift */,
+			);
+			name = "Custom Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B06DE951E025B62009B556E /* ViewController.swift in Sources */,
+				0B06DEC21E025C2C009B556E /* LoginViewController.swift in Sources */,
+				0B06DEC51E025FF3009B556E /* FormTextField.swift in Sources */,
 				0B06DE931E025B62009B556E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

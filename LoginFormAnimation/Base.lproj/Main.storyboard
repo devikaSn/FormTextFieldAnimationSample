@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="LoginFormAnimation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JAy-jB-7OL" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOREM IPSUM DOLOR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UYa-bS-ppj">
+                                        <rect key="frame" x="52" y="35" width="271" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="271" id="GrU-ir-Kio"/>
+                                            <constraint firstAttribute="height" constant="47" id="P9D-QU-PlD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L3H-Wd-q17" customClass="FormTextField" customModule="LoginFormAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="153" width="275" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="tv7-UE-Wev"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="nextField" destination="LFa-d2-7rC" id="h8I-eZ-djz"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFa-d2-7rC" customClass="FormTextField" customModule="LoginFormAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="208" width="275" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="nextField" destination="2tB-XQ-4gT" id="IPf-Vf-M0g"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tB-XQ-4gT" customClass="FormTextField" customModule="LoginFormAnimation" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="263" width="275" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ih-Ds-lUO">
+                                        <rect key="frame" x="130" y="331" width="114" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="114" id="HvJ-GW-bxX"/>
+                                            <constraint firstAttribute="height" constant="45" id="g0h-gL-VNE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="19"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="0.36862745099999999" green="0.83529411760000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2tB-XQ-4gT" firstAttribute="trailing" secondItem="LFa-d2-7rC" secondAttribute="trailing" id="0Xw-GU-KFP"/>
+                                    <constraint firstItem="LFa-d2-7rC" firstAttribute="trailing" secondItem="L3H-Wd-q17" secondAttribute="trailing" id="3Rv-5P-PXH"/>
+                                    <constraint firstItem="2tB-XQ-4gT" firstAttribute="top" secondItem="LFa-d2-7rC" secondAttribute="bottom" constant="25" id="6Ci-sI-VOO"/>
+                                    <constraint firstItem="L3H-Wd-q17" firstAttribute="centerX" secondItem="JAy-jB-7OL" secondAttribute="centerX" id="6LU-fd-49X"/>
+                                    <constraint firstItem="LFa-d2-7rC" firstAttribute="width" secondItem="L3H-Wd-q17" secondAttribute="width" id="DGt-Gw-X6R"/>
+                                    <constraint firstItem="2tB-XQ-4gT" firstAttribute="width" secondItem="LFa-d2-7rC" secondAttribute="width" id="DcR-Vs-I6c"/>
+                                    <constraint firstItem="2tB-XQ-4gT" firstAttribute="leading" secondItem="LFa-d2-7rC" secondAttribute="leading" id="Dno-N1-vFA"/>
+                                    <constraint firstItem="LFa-d2-7rC" firstAttribute="top" secondItem="L3H-Wd-q17" secondAttribute="bottom" constant="25" id="E3B-Sj-ce4"/>
+                                    <constraint firstItem="9Ih-Ds-lUO" firstAttribute="top" secondItem="2tB-XQ-4gT" secondAttribute="top" constant="68" id="Nal-uF-0Bv"/>
+                                    <constraint firstItem="L3H-Wd-q17" firstAttribute="top" secondItem="UYa-bS-ppj" secondAttribute="bottom" constant="71" id="V05-DD-9IR"/>
+                                    <constraint firstItem="L3H-Wd-q17" firstAttribute="leading" secondItem="JAy-jB-7OL" secondAttribute="leading" constant="50" id="Vkh-WH-BLy"/>
+                                    <constraint firstItem="9Ih-Ds-lUO" firstAttribute="centerX" secondItem="2tB-XQ-4gT" secondAttribute="centerX" constant="-0.5" id="ZMT-yj-D7W"/>
+                                    <constraint firstItem="LFa-d2-7rC" firstAttribute="leading" secondItem="L3H-Wd-q17" secondAttribute="leading" id="dcG-v3-h3F"/>
+                                    <constraint firstAttribute="trailing" secondItem="L3H-Wd-q17" secondAttribute="trailing" constant="50" id="dpm-ju-G1o"/>
+                                    <constraint firstItem="UYa-bS-ppj" firstAttribute="centerX" secondItem="JAy-jB-7OL" secondAttribute="centerX" id="e9v-UH-Nic"/>
+                                    <constraint firstItem="UYa-bS-ppj" firstAttribute="top" secondItem="JAy-jB-7OL" secondAttribute="top" constant="35" id="f9s-Yr-s1z"/>
+                                    <constraint firstItem="2tB-XQ-4gT" firstAttribute="height" secondItem="LFa-d2-7rC" secondAttribute="height" id="fsr-5W-hev"/>
+                                    <constraint firstItem="LFa-d2-7rC" firstAttribute="height" secondItem="L3H-Wd-q17" secondAttribute="height" id="puZ-B8-HIM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JAy-jB-7OL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Z8L-Gl-o0w"/>
+                            <constraint firstItem="JAy-jB-7OL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d9x-um-Ebj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JAy-jB-7OL" secondAttribute="bottom" id="r5f-Ja-ayZ"/>
+                            <constraint firstAttribute="trailing" secondItem="JAy-jB-7OL" secondAttribute="trailing" id="vx4-pA-JJE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="L3H-Wd-q17" id="mzO-pz-z0W"/>
+                        <outlet property="mobile" destination="2tB-XQ-4gT" id="Y26-pj-sSS"/>
+                        <outlet property="name" destination="LFa-d2-7rC" id="pMG-aF-tdC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
