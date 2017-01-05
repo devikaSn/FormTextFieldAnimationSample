@@ -84,7 +84,7 @@ class FormTextField: UITextField, CAAnimationDelegate, UITextFieldDelegate{
      Get the bottom border
      */
     func customiseBottomBorder() {
-        
+       
         border.borderColor = borderFillColor.cgColor
         border.borderWidth = borderWidth
         border.position = CGPoint(x:  border.frame.origin.x, y: border.frame.origin.y)
@@ -101,7 +101,6 @@ class FormTextField: UITextField, CAAnimationDelegate, UITextFieldDelegate{
             let midX = (self.rightView?.bounds)!.midX+2
             let midY = (self.rightView?.bounds)!.midY+2
             let circlePath = UIBezierPath(arcCenter: CGPoint(x: midX, y: midY), radius: (self.rightView?.frame.height)!/3, startAngle: CGFloat(M_PI/2), endAngle: CGFloat(M_PI), clockwise: false)
-            
             // Setup the CAShapeLayer with the path, colors, and line width
             self.initialiseCircleLayer()
             circleLayer.path = circlePath.cgPath
@@ -259,12 +258,14 @@ class FormTextField: UITextField, CAAnimationDelegate, UITextFieldDelegate{
      */
     func addBottomBorder() {
         
-        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width:  self.frame.size.width-10, height: self.frame.size.height)
+        border = CALayer()
+        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width:  self.frame.size.width - 10 , height: self.frame.size.height)
+        self.customiseBottomBorder()
         let transition: CATransition = self.getTheTransitionForBotomBorder()
         if(self.border.superlayer == nil) {
-            
-            self.layer.addSublayer(border)
+          
             self.border.add(transition, forKey: "slideInBorderTransition");
+            self.layer.addSublayer(border)
         }
     }
     
