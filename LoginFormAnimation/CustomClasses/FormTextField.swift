@@ -86,7 +86,6 @@ class FormTextField: UITextField, CAAnimationDelegate, UITextFieldDelegate{
     func customiseBottomBorder() {
         
         border.borderColor = borderFillColor.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width:  self.frame.size.width-65, height: self.frame.size.height)
         border.borderWidth = borderWidth
         border.position = CGPoint(x:  border.frame.origin.x, y: border.frame.origin.y)
         border.anchorPoint = CGPoint(x: 0, y: 0)
@@ -122,8 +121,7 @@ class FormTextField: UITextField, CAAnimationDelegate, UITextFieldDelegate{
         
         self.customiseJumpingAnimation()
         let animation = CABasicAnimation(keyPath: jumpingAnimationKey as String)
-        animation.beginTime = 0.02
-        animation.duration = 1.5
+        animation.duration = 0.09
         animation.setValue(jumpingAnimationKey, forKey: jumpingAnimationKey as String)
         jumpingAnimationLayer.strokeEnd = 1.0
 
@@ -261,19 +259,30 @@ class FormTextField: UITextField, CAAnimationDelegate, UITextFieldDelegate{
      */
     func addBottomBorder() {
         
+        border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width:  self.frame.size.width-10, height: self.frame.size.height)
+        let transition: CATransition = self.getTheTransitionForBotomBorder()
+        if(self.border.superlayer == nil) {
+            
+            self.layer.addSublayer(border)
+            self.border.add(transition, forKey: "slideInBorderTransition");
+        }
+    }
+    
+    /*
+     Returns the CATransition object for bottom border animation
+     */
+    func getTheTransitionForBotomBorder() -> CATransition {
+        
         let transition: CATransition = CATransition()
         let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = kCATransitionPush
         transition.duration = 0.5
         transition.timingFunction = timeFunc
+        transition.fillMode = kCAFillModeRemoved
         self.customiseAnimationDirection()
         transition.delegate = self
         transition.subtype =  shouldAnimateFromLeft ?  kCATransitionFromLeft : kCATransitionFromRight
-        if(self.border.superlayer == nil) {
-            
-            self.layer.addSublayer(border)
-            self.border.add(transition, forKey: kCATransition);
-        }
+        return transition
     }
     
     /*
