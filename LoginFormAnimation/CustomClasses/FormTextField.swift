@@ -2,8 +2,8 @@
 //  FormTextField.swift
 //  LoginFormAnimation
 //
-//  Created by Devika on 15/12/16.
-//  Copyright © 2016 Devika. All rights reserved.
+//  Created by Devika Sukumaran on 15/12/16.
+//  Copyright © 2016 Devika Sukumaran. All rights reserved.
 //
 
 import UIKit
